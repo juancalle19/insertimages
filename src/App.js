@@ -7,8 +7,7 @@ function App() {
   const [images, setImages] = useState([])
   const [imageVisible, setImageVisible] = useState(false)
   const [imagesVisible, setImagesVisible] = useState([])
-  //const [newWidht, setNewWidht] = useState(null)
-  //const [newHeight, setNewHeight] = useState(null)
+  
   const picture = new Image()
   const width =796
   const height = 1123
@@ -58,7 +57,7 @@ function App() {
         ratio: ratio.ratio
       }
       
-      //localStorage.setItem("url", objectImage.src)
+      
       console.log(objectImage.src)
       setImages([...images,objectImage])
           }
@@ -84,16 +83,16 @@ function App() {
       if (element.width > element.height) {
 
         if (element.width > height) {
-          //setNewWidht(height)
+          
           newWidht.newWidht=height
           newHeight.newHeight= (Math.round(height/element.ratio))
-          //setNewHeight(Math.round(height/element.ratio))
+          
         }else{
           if (element.height > width) {
-            //setNewWidht(Math.round(width*element.ratio))
+            
             newWidht.newWidht=(Math.round(width*element.ratio))
             newHeight.newHeight = width
-            //setNewHeight(width)
+            
           }else{
             newWidht.newWidht= element.width
             newHeight.newHeight= element.height
@@ -102,35 +101,35 @@ function App() {
         
       } else if(element.height > element.width){
         if (element.height > height) {
-          //setNewWidht(Math.round(height/element.ratio))
+          
           newWidht.newWidht= (Math.round(height/element.ratio))
           newHeight.newHeight = height
-          //setNewHeight(height)
+          
         }else {
           if (element.width > width) {
-            //setNewWidht(width)
+            
             newWidht.newWidht = width
             newHeight.newHeight = (Math.round(width*element.ratio))
-            //setNewHeight(Math.round(width*element.ratio))
+            
           }else{
-            //setNewWidht(element.width)
+            
             newWidht.newWidht = element.width
             newHeight.newHeight = element.height
-            //setNewHeight(element.height)
+            
           }
         }
       }else{
         if (element.width > width) {
-          //setNewWidht(width)
+          
           newWidht.newWidht = width
           newHeight.newHeight = width
-          //setNewHeight(width)
+          
           return
         }else{
-          //setNewWidht(element.width)
+          
           newWidht.newWidht = element.width
           newHeight.newHeight = element.height
-          //setNewHeight(element.height)
+          
         }
       }
       const newImage = new Image(newWidht,newHeight)
