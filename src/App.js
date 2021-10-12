@@ -3,7 +3,7 @@ import shortid from 'shortid'
 
 
 function App() {
-
+  
   const [images, setImages] = useState([])
   const [imageVisible, setImageVisible] = useState(false)
   const [imagesVisible, setImagesVisible] = useState([])
@@ -25,7 +25,8 @@ function App() {
   }
 
   const captureImage = (e) => {
-    
+    try {
+      
     e.preventDefault()
     setImages([])
     console.log(e)
@@ -63,6 +64,9 @@ function App() {
           }
     
     console.log(images)
+    } catch (error) {
+      alert("recargar pagina")
+    }
   }
 
   
@@ -70,6 +74,8 @@ function App() {
   
 
   const addImage = async (e)=>{
+    try {
+
     e.preventDefault()
     console.log(images.length)
     if (images.length<1) {
@@ -153,6 +159,10 @@ function App() {
     })
     setImageVisible(true)
     console.log(imagesVisible)
+
+    } catch (error) {
+      alert("Recargar pagina")
+    }
     
   }
   
